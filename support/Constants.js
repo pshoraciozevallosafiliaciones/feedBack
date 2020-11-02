@@ -60,6 +60,7 @@ module.exports = Object.freeze({
     COD_DOC:"COD_DOC",
     TIP_DOC:"TIP_DOC",
     EMAIL:"cocaresh@intercorp.com.pe",
+    FEEDBACK_HTML_ACP:"cocaresh@intercorp.com.pe",
 
     
 

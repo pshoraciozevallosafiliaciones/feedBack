@@ -23,6 +23,8 @@ class FeedController {
 
         const visibility = this.environmentUtil.getAppSettings(constants.TOPIC_SEND_BULK_EMAILS_SEND_MAIL_VISIBILITY);
 
+        const feedback_html_acp = this.environmentUtil.getAppSettings(constants.FEEDBACK_HTML_ACP);
+
         const email = this.environmentUtil.getAppSettings(constants.EMAIL);
         const tip_Doc = this.environmentUtil.getAppSettings(constants.TIP_DOC);
         const cod_Doc = this.environmentUtil.getAppSettings(constants.COD_DOC);
