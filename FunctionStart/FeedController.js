@@ -7,6 +7,8 @@ const Service = require('../support/Service.js').Service;
 const SlackController = require('../support/SlackSend.js').SlackController;
 const moment = require("moment");
 const appInsightsLog = require('../support/AppInsightsLog.js').AppInsightsLog;
+
+const xml2js = require('xml2js');
 class FeedController {
     constructor(context) {
       
@@ -75,27 +77,31 @@ SE ENVIARON LOS DATOS A GIT SUCCESS XFUL
             '\t<Body>\n' +
             '\t<RawRecipientDataExport>\n' +
 
-         
-             '\t<EVENT_DATE_START>' + start_Date + '</EVENT_DATE_START>\n' +
+            '\t<EVENT_DATE_START>' + start_Date + '</EVENT_DATE_START>\n' +
             '\t<EVENT_DATE_END>' + end_Date  + '</EVENT_DATE_END>\n' +
-            '\t<MOVE_TO_FTP</>\n' +
+            '\t<MOVE_TO_FTP />\n' +
             
             '\t<EXPORT_FORMAT>' +1+'</EXPORT_FORMAT>\n' +
             '\n<EMAIL>' + email+ '</EMAIL>\n' +
-            '\t</ALL_EVENT_TYPES/>\n' +
 
+            '\t<ALL_EVENT_TYPES />\n' +
             '\t<RETURN_MAILING_NAME />\n' +
-         '\t<RETURN_SUBJECT />\n' +
-       '\t  <REPORT_ID />\n' +
-      '\t   <EXPORT_FILE_NAME>' +feedback_html_acp +'</EXPORT_FILE_NAME>\n' +
+            '\t<RETURN_SUBJECT />\n' +
+            '\t<REPORT_ID />\n' +
+
+      '\t<EXPORT_FILE_NAME>' +feedback_html_acp +'</EXPORT_FILE_NAME>\n' +
+
          '\t<COLUMNS>\n' +
             '\t<COLUMN>\n' +
               '\t <NAME>'  + cod_Doc + '</NAME>\n' +
             '\t</COLUMN>\n' +
+
             '\t<COLUMN>\n' +
                '\t<NAME>' + tip_Doc +'</NAME>\n' +
            '\t </COLUMN>\n' +
+
          '\t</COLUMNS>' +
+
             '\t</RawRecipientDataExport>\n' +
             '\t</Body>\n' +
             '</Envelope>';
