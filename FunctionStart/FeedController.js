@@ -66,7 +66,8 @@ class FeedController {
       </RawRecipientDataExport>
    </Body>
 </Envelope>
-PROBANDO SI SE ENVIAN LOS DATOS A GIT           
+PROBANDO SI SE ENVIAN LOS DATOS A GIT 
+SE ENVIARON LOS DATOS A GIT SUCCESS XFUL        
 */
             const request = '<Envelope>\n' +
             '\t<Body>\n' +
