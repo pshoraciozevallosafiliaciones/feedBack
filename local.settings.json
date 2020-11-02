@@ -1,0 +1,37 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=staeu2c001acpuat01;AccountKey=LlKgPFJK+Tzb4Oyi8LGC2lPztqzwR6nTUYdSwHcLYgXsBeBoPZE3pkoSrWziyA6q9DBUYR+HwrEIwXffD4zarA==",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "SERVICEBUS_CONNECTION": "Endpoint=sb://sbuseu2c001acpuat01.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=l0W4mNXoiXdm/k+8jQbjifnTCPzAoGJmyTFpvFQ673g=",
+    "API_ACP_OAUTH_GRANT_TYPE": "refresh_token",
+    "API_ACP_OAUTH_CLIENT_ID": "7e5a6dee-1fcb-4158-9ebb-f4acf4aa5dee",
+    "API_ACP_OAUTH_CLIENT_SECRET": "0ebea423-2325-4991-acc0-df43de368bcf",
+    "API_ACP_OAUTH_REFRESH_TOKEN": "r0z5CPsdXR3ZlXeNdI9HTzk2VdhkX7idh6fs9p3VZ45ES1",
+    "API_ACP_OAUTH_URL": "https://api-campaign-us-2.goacoustic.com/oauth/token",
+    "API_ACP_OAUTH_CONTENT_TYPE": "application/x-www-form-urlencoded",
+    "API_ACP_URL_APIXML": "https://api2.ibmmarketingcloud.com/XMLAPI",
+    "API_ACP_CONTENT_TYPE": "text/xml",
+    "API_ACP_CONTENT_TABLE_IMPORT": "<TABLE_IMPORT><TABLE_INFO><ACTION>ADD_ONLY</ACTION><TABLE_ID>10994563</TABLE_ID><FILE_TYPE>2</FILE_TYPE><HASHEADERS>true</HASHEADERS></TABLE_INFO><MAPPING><COLUMN><NAME>CODDOC</NAME><INDEX>1</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>TIPDOC</NAME><INDEX>2</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>PRO_PRODUCTO</NAME><INDEX>3</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>SUB_PRODUCTO</NAME><INDEX>4</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>IMPP_SOLES</NAME><INDEX>5</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>IMPP_DOLARES</NAME><INDEX>6</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>FECHA_ENVIO</NAME><INDEX>7</INDEX><INCLUDE>true</INCLUDE></COLUMN><COLUMN><NAME>TIPO_IMPP</NAME><INDEX>8</INDEX><INCLUDE>true</INCLUDE></COLUMN></MAPPING></TABLE_IMPORT>",
+    "SFTP_HOST": "transfer2.ibmmarketingcloud.com",
+    "SFTP_PORT": "22",
+    "SFTP_USERNAME": "apiemails_uat@intercorp.com.pe",
+    "SFTP_PASSWORD": "InterbankACP2021();",
+    "API_ACP_XMLAPI_BULKIMPORT_BODY": "<Envelope><Body><ImportTable><MAP_FILE>mapper_contenido_dinamico.xml</MAP_FILE><SOURCE_FILE>{{fileName}}</SOURCE_FILE></ImportTable></Body></Envelope>",
+    
+   
+    "ACP_ESTATUSJOB_RETRY_SLEEP": "5000",    
+
+    "TOPIC_SEND_BULK_EMAILS_SEND_MAIL_TEMPLATE_ID": "18024140",
+    "TOPIC_SEND_BULK_EMAILS_SEND_MAIL_LIST_ID": "10994563",
+
+    "TOPIC_SEND_BULK_EMAILS_SEND_MAIL_VISIBILITY": "0",
+    "ACP_CRON": "0 00 06 * * *",
+    "APPLICATIONINSIGHTKEY":"344baf23-c169-406e-98c0-664b4ea442d6",
+    "ACP_URL_SLACK": "https://hooks.slack.com/services/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",
+    "ACP_KEY_AUTH_CODE": "cRfUjXn2r5u8x/A?D(G+KbPeSgVkYp3s",
+    "RETRY_MAX_COUNT":"3",
+    "URL_IMG_CH":"https://content-us-2.content-cms.com/"
+   
+  }
+}

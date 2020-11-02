@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "%ACP_CRON%"
+    }
+  ],
+  "disabled": false
+}
