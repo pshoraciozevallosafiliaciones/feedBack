@@ -30,8 +30,8 @@ class FeedController {
         const email = this.environmentUtil.getAppSettings(constants.EMAIL);
         const tip_Doc = this.environmentUtil.getAppSettings(constants.TIP_DOC);
         const cod_Doc = this.environmentUtil.getAppSettings(constants.COD_DOC);
+        const end_Date = moment().subtract(1, 'days').format('MM/DD/YY h:mm:ss');
         const start_Date = moment().format('MM/DD/YY h:mm:ss');
-        const end_Date = moment().add(1, 'days').format('MM/DD/YY h:mm:ss');
 
 
 
