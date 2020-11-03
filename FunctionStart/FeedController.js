@@ -11,7 +11,7 @@ const appInsightsLog = require('../support/AppInsightsLog.js').AppInsightsLog;
 const xml2js = require('xml2js');
 class FeedController {
     constructor(context) {
-      
+
         this.environmentUtil = EnvironmentUtil;
         this.EncryptUtil = EncryptUtil;
         this.context = context;
@@ -20,8 +20,8 @@ class FeedController {
         this.appInsightsLog = new appInsightsLog(context);
     }
 
-    async ExecuteFeedBackHTML(){
-       
+    async ExecuteFeedBackHTML() {
+
 
         const visibility = this.environmentUtil.getAppSettings(constants.TOPIC_SEND_BULK_EMAILS_SEND_MAIL_VISIBILITY);
 
@@ -44,7 +44,7 @@ class FeedController {
                 this.appInsightsLog.log("Error getting accessToken - Acoustic Campaign")
                 return false;
             }
-            
+
             /*
             <Envelope>
    <Body>
@@ -71,59 +71,59 @@ class FeedController {
    </Body>
 </Envelope>
 PROBANDO SI SE ENVIAN LOS DATOS A GIT 
-SE ENVIARON LOS DATOS A GIT SUCCESS XFUL        
+HACIENDO MODIFICACIONES EN LA TERMINAL       
 */
             const request = '<Envelope>\n' +
-            '\t<Body>\n' +
-            '\t<RawRecipientDataExport>\n' +
+                '\t<Body>\n' +
+                '\t<RawRecipientDataExport>\n' +
 
-            '\t<EVENT_DATE_START>' + start_Date + '</EVENT_DATE_START>\n' +
-            '\t<EVENT_DATE_END>' + end_Date  + '</EVENT_DATE_END>\n' +
-            '\t<MOVE_TO_FTP />\n' +
-            
-            '\t<EXPORT_FORMAT>' +1+'</EXPORT_FORMAT>\n' +
-            '\n<EMAIL>' + email+ '</EMAIL>\n' +
+                '\t<EVENT_DATE_START>' + start_Date + '</EVENT_DATE_START>\n' +
+                '\t<EVENT_DATE_END>' + end_Date + '</EVENT_DATE_END>\n' +
+                '\t<MOVE_TO_FTP />\n' +
 
-            '\t<ALL_EVENT_TYPES />\n' +
-            '\t<RETURN_MAILING_NAME />\n' +
-            '\t<RETURN_SUBJECT />\n' +
-            '\t<REPORT_ID />\n' +
+                '\t<EXPORT_FORMAT>' + 1 + '</EXPORT_FORMAT>\n' +
+                '\n<EMAIL>' + email + '</EMAIL>\n' +
 
-      '\t<EXPORT_FILE_NAME>' +feedback_html_acp +'</EXPORT_FILE_NAME>\n' +
+                '\t<ALL_EVENT_TYPES />\n' +
+                '\t<RETURN_MAILING_NAME />\n' +
+                '\t<RETURN_SUBJECT />\n' +
+                '\t<REPORT_ID />\n' +
 
-         '\t<COLUMNS>\n' +
-            '\t<COLUMN>\n' +
-              '\t <NAME>'  + cod_Doc + '</NAME>\n' +
-            '\t</COLUMN>\n' +
+                '\t<EXPORT_FILE_NAME>' + feedback_html_acp + '</EXPORT_FILE_NAME>\n' +
 
-            '\t<COLUMN>\n' +
-               '\t<NAME>' + tip_Doc +'</NAME>\n' +
-           '\t </COLUMN>\n' +
+                '\t<COLUMNS>\n' +
+                '\t<COLUMN>\n' +
+                '\t <NAME>' + cod_Doc + '</NAME>\n' +
+                '\t</COLUMN>\n' +
 
-         '\t</COLUMNS>' +
+                '\t<COLUMN>\n' +
+                '\t<NAME>' + tip_Doc + '</NAME>\n' +
+                '\t </COLUMN>\n' +
 
-            '\t</RawRecipientDataExport>\n' +
-            '\t</Body>\n' +
-            '</Envelope>';
+                '\t</COLUMNS>' +
+
+                '\t</RawRecipientDataExport>\n' +
+                '\t</Body>\n' +
+                '</Envelope>';
 
             this.appInsightsLog.log("Invocando API XML - ImportTable");
 
             let responseBulkImport = await this.service.XMLApi(accessToken, request);
 
             let response = "";
-            xml2js.parseString(responseBulkImport.data, function (err, result) {
+            xml2js.parseString(responseBulkImport.data, function(err, result) {
                 response = result;
             });
             if (response.Envelope.Body[0].RESULT[0].SUCCESS[0] == "false") {
                 this.appInsightsLog.log("Error - " + response.Envelope.Body[0].Fault[0].FaultString)
-                //RE-INTENTO
+                    //RE-INTENTO
                 return false;
             }
             let jobId = response.Envelope.Body[0].RESULT[0].JOB_ID[0];
 
             this.appInsightsLog.log("ID Job generado : " + jobId);
 
-         
+
 
         } catch (err) {
             this.appInsightsLog.log("Error" + err);
@@ -131,7 +131,7 @@ SE ENVIARON LOS DATOS A GIT SUCCESS XFUL
 
 
     }
-    
+
 }
 
 exports.FeedController = FeedController;
